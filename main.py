@@ -11,10 +11,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # set specific origins in prod
+    allow_origins=['*'],  # set specific origins in prod
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=['*'],
+    allow_headers=['*'],
 )
 
 
@@ -22,7 +22,7 @@ class QueryRequest(BaseModel):
     question: str
 
 
-@app.post("/query")
+@app.post('/query')
 async def query_travel_agent(query: QueryRequest):
     try:
         print(query)
